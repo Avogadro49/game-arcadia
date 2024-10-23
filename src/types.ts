@@ -20,6 +20,10 @@ export type GamesResponse = {
   results: GameType[];
 };
 
+export type GameProps = {
+  game: GameType;
+};
+
 export type GameGridProps = {
   selectedGenre: GenresProps | null;
 };
@@ -40,10 +44,16 @@ export type GenresProps = {
   id: number;
   name: string;
   image_background: string;
-  
 };
 
 export type GenreListProps = {
+  onSelectGenre: (genre: GenresProps) => void;
+  selectedGenre: GenresProps | null;
+};
+
+export type GenreListItemProps = {
+  genre: GenresProps;
+  selectedGenre: GenresProps | null;
   onSelectGenre: (genre: GenresProps) => void;
 };
 
