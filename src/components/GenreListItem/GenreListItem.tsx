@@ -3,7 +3,7 @@ import { GenreListItemProps } from "../../types";
 import { getCroppedImageUrl } from "../../services/image-url";
 
 const GenreListItem = ({selectedGenre,genre,onSelectGenre,}: GenreListItemProps) => {
-  const SelectedCategory = selectedGenre && genre.id === selectedGenre.id ? "bold" : "normal";
+  const highlightFont = selectedGenre && genre.id === selectedGenre.id ? "bold" : "normal";
   return (
     <ListItem key={genre.id}>
       <HStack paddingY={1}>
@@ -14,7 +14,7 @@ const GenreListItem = ({selectedGenre,genre,onSelectGenre,}: GenreListItemProps)
         />
         <VStack>
           <Button
-            fontWeight={SelectedCategory}
+            fontWeight={highlightFont}
             onClick={() => onSelectGenre(genre)}
             fontSize={"lg"}
             variant="link"
