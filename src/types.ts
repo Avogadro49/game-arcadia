@@ -4,6 +4,7 @@ export type Platform = {
   id: number;
   name: string;
   slug: string;
+  platforms?: Platform[]; 
 };
 
 export type GameType = {
@@ -25,7 +26,8 @@ export type GameProps = {
 };
 
 export type GameGridProps = {
-  gameQuery: GameQuery
+  gameQuery: GameQuery;
+  selectedPlatform: Platform | null;
 };
 
 export type PlatformListProps = {
@@ -57,6 +59,11 @@ export type GenreListItemProps = {
   onSelectGenre: (genre: GenresProps) => void;
 };
 
+export type PlatformSelectorProps = {
+  onSelectPlatform: (platform: Platform) => void;
+  selectedPlatform: Platform | null;
+};
+
 export type DataResponse<T> = {
   count: number;
   results: T[];
@@ -65,10 +72,10 @@ export type DataResponse<T> = {
 export type GameQuery = {
   genre: GenresProps | null;
   platform: Platform | null;
-  sortOrder: string
+  sortOrder: string;
 };
 
 export type SortSelectorProps = {
-  onSelectSortOrder: (sortOrder: string) => void
-  sortOrder:string
-}
+  onSelectSortOrder: (sortOrder: string) => void;
+  sortOrder: string;
+};
