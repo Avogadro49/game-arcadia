@@ -1,7 +1,11 @@
-import { GameType, GenresProps } from "../types";
+import { GameQuery, GameType } from "../types";
 import useData from "./useData";
 
-//prettier-ignore
-const useGames = (selectedGenre: GenresProps | null) => useData<GameType>("/games", {params: {genres: selectedGenre?.id}}, [selectedGenre?.id]);
+const useGames = (gameQuery: GameQuery) =>
+  useData<GameType>(
+    "/games",
+    { params: { genres: gameQuery.genre?.id, ordering: gameQuery.sortOrder } },
+    [gameQuery]
+  );
 
 export default useGames;

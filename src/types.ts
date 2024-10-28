@@ -25,7 +25,7 @@ export type GameProps = {
 };
 
 export type GameGridProps = {
-  selectedGenre: GenresProps | null;
+  gameQuery: GameQuery
 };
 
 export type PlatformListProps = {
@@ -61,3 +61,14 @@ export type DataResponse<T> = {
   count: number;
   results: T[];
 };
+
+export type GameQuery = {
+  genre: GenresProps | null;
+  platform: Platform | null;
+  sortOrder: string
+};
+
+export type SortSelectorProps = {
+  onSelectSortOrder: (sortOrder: string) => void
+  sortOrder:string
+}

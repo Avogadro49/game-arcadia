@@ -4,6 +4,7 @@ import usePlatforms from "../../hooks/usePlatforms";
 
 const PlatformSelector = () => {
     const {data} = usePlatforms()
+    //Add Functionality
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>Platforms</MenuButton>
