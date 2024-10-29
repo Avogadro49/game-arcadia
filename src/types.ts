@@ -4,7 +4,7 @@ export type Platform = {
   id: number;
   name: string;
   slug: string;
-  platforms?: Platform[]; 
+  platforms?: Platform[];
 };
 
 export type GameType = {
@@ -14,6 +14,8 @@ export type GameType = {
   parent_platforms: { platform: Platform }[];
   metacritic: number;
   genres: string[];
+  rating_top: number;
+  rating: number;
 };
 
 export type GamesResponse = {
@@ -73,7 +75,7 @@ export type GameQuery = {
   genre: GenresProps | null;
   platform: Platform | null;
   sortOrder: string;
-  searchText: string
+  searchText: string;
 };
 
 export type SortSelectorProps = {
@@ -82,9 +84,13 @@ export type SortSelectorProps = {
 };
 
 export type SearchInputProps = {
-  onSearch: (searchText: string) => void
-}
+  onSearch: (searchText: string) => void;
+};
 
 export type GameHeadingProps = {
-  gameQuery: GameQuery
-}
+  gameQuery: GameQuery;
+};
+
+export type IconProps = {
+  rating: number;
+};
