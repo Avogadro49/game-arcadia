@@ -73,9 +73,14 @@ export type GameQuery = {
   genre: GenresProps | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string
 };
 
 export type SortSelectorProps = {
   onSelectSortOrder: (sortOrder: string) => void;
   sortOrder: string;
 };
+
+export type SearchInputProps = {
+  onSearch: (searchText: string) => void
+}
