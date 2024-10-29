@@ -84,3 +84,7 @@ export type SortSelectorProps = {
 export type SearchInputProps = {
   onSearch: (searchText: string) => void
 }
+
+export type GameHeadingProps = {
+  gameQuery: GameQuery
+}
