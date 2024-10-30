@@ -5,7 +5,6 @@ import { PlatformSelectorProps } from "../../types";
 
 const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: PlatformSelectorProps) => {
   const { data } = usePlatforms();
-  console.log(selectedPlatform);
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
@@ -18,8 +17,8 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: PlatformSelect
               {({ isExpanded }) => (
                 <>
                   <h2>
-                    <AccordionButton>
-                      <Box flex="1" textAlign="left" onClick={() => onSelectPlatform(platform)}>
+                    <AccordionButton justifyContent="space-between">
+                      <Box >
                         {platform.name}
                       </Box>
                       {platform.platforms && platform.platforms.length > 0 ? isExpanded ? <BsChevronUp /> : <BsChevronDown /> : null}
@@ -41,21 +40,6 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: PlatformSelect
         </Accordion>
       </MenuList>
     </Menu>
-    // <Menu>
-    //   <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-    //     {selectedPlatform?.name || "Platform"}
-    //   </MenuButton>
-    //   <MenuList>
-    //     {flattenedPlatforms.map((platform) => (
-    //       <MenuItem
-    //         onClick={() => onSelectPlatform(platform)}
-    //         key={platform.id}
-    //       >
-    //         {platform.name}
-    //       </MenuItem>
-    //     ))}
-    //   </MenuList>
-    // </Menu>
   );
 };
 
