@@ -1,4 +1,4 @@
-import noImage from "../assets/images/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
+import noImage from "../assets/images/themes/no_image/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"
 
 export const getCroppedImageUrl = (url: string) => {
   if (!url) return noImage
